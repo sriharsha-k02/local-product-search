@@ -7,31 +7,22 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
+  <div class="container">
     <h1>🛒 Grocery Personalization</h1>
-  </header>
-
-  <main>
     <form id="personalization-form">
-      <section>
-        <h2>Personal Details</h2>
-        <label>First Name* <input type="text" name="firstName" required /></label>
-        <label>Last Name <input type="text" name="lastName" /></label>
-        <label>Phone Number <input type="tel" name="phone" /></label>
-      </section>
+      <div class="form-grid">
+        <div class="form-column">
+          <label for="firstName">First Name*</label>
+          <input type="text" id="firstName" name="firstName" maxlength="128" required />
 
-      <section>
-        <h2>Location</h2>
-        <label>Zip Code* <input type="text" name="zip" id="zip" required /></label>
-        <label>City <input type="text" name="city" id="city" readonly /></label>
-        <label>State/Region <input type="text" name="state" id="state" readonly /></label>
-        <small>This helps us find local grocery stores, seasonal ingredients, and delivery options — Later ON</small>
-      </section>
+          <label for="lastName">Last Name</label>
+          <input type="text" id="lastName" name="lastName" maxlength="128" />
 
-      <section>
-        <h2>Demographics</h2>
-        <label>Age Group
-          <select name="ageGroup">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" name="phone" maxlength="15" />
+
+          <label for="ageGroup">Age Group</label>
+          <select id="ageGroup" name="ageGroup">
             <option>Under 18</option>
             <option>18–25</option>
             <option>26–35</option>
@@ -39,21 +30,34 @@
             <option>46–60</option>
             <option>Over 60</option>
           </select>
-        </label>
+        </div>
 
-        <label>Gender Identity
-          <select name="gender" id="gender">
+        <div class="form-column">
+          <label for="zip">Zip Code*</label>
+          <input type="text" id="zip" name="zip" maxlength="7" required />
+
+          <label for="city">City</label>
+          <input type="text" id="city" name="city" maxlength="40" readonly />
+
+          <label for="state">State/Region</label>
+          <input type="text" id="state" name="state" maxlength="20" readonly />
+
+          <label for="gender">Gender Identity</label>
+          <select id="gender" name="gender">
             <option>Male</option>
             <option>Female</option>
             <option>Non-binary</option>
             <option>Prefer not to say</option>
             <option>Other</option>
           </select>
-        </label>
-        <label id="gender-other-label" style="display:none;">Please specify: <input type="text" name="genderOther" /></label>
 
-        <label>Ethnicity (Optional)
-          <select name="ethnicity">
+          <div id="gender-other-container" style="display:none;">
+            <label for="genderOther">Please specify</label>
+            <input type="text" id="genderOther" name="genderOther" maxlength="128" />
+          </div>
+
+          <label for="ethnicity">Ethnicity (Optional)</label>
+          <select id="ethnicity" name="ethnicity">
             <option value="">-- Select --</option>
             <option>South Asian</option>
             <option>East Asian</option>
@@ -64,33 +68,32 @@
             <option>Indigenous</option>
             <option>Other</option>
           </select>
-        </label>
-      </section>
+        </div>
+      </div>
 
-      <section>
-        <h2>Preferences</h2>
-        <fieldset>
-          <legend>Preferred Shops</legend>
+      <div class="preferences">
+        <h2>Preferred Stores</h2>
+        <div class="inline-options">
           <label><input type="checkbox" name="shops" value="Walmart" /> Walmart</label>
           <label><input type="checkbox" name="shops" value="Costco" /> Costco</label>
           <label><input type="checkbox" name="shops" value="Farmboy" /> Farmboy</label>
           <label><input type="checkbox" name="shops" value="Metro" /> Metro</label>
           <label><input type="checkbox" name="shops" value="Sobeys" /> Sobeys</label>
-        </fieldset>
+        </div>
 
-        <fieldset>
-          <legend>Delivery Apps</legend>
+        <h2>Delivery Apps</h2>
+        <div class="inline-options">
           <label><input type="checkbox" name="delivery" value="Uber" /> Uber</label>
           <label><input type="checkbox" name="delivery" value="Instacart" /> Instacart</label>
-        </fieldset>
-      </section>
+        </div>
+      </div>
 
       <div class="actions">
         <button type="submit">Save Preferences</button>
         <button type="button" class="secondary">Skip for Now</button>
       </div>
     </form>
-  </main>
+  </div>
 
   <script src="script.js"></script>
 </body>
