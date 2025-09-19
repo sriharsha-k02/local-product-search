@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Grocery Personalization</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>🛒 Grocery Personalization</h1>
+  </header>
+
+  <main>
+    <form id="personalization-form">
+      <section>
+        <h2>Personal Details</h2>
+        <label>First Name* <input type="text" name="firstName" required /></label>
+        <label>Last Name <input type="text" name="lastName" /></label>
+        <label>Phone Number <input type="tel" name="phone" /></label>
+      </section>
+
+      <section>
+        <h2>Location</h2>
+        <label>Zip Code* <input type="text" name="zip" id="zip" required /></label>
+        <label>City <input type="text" name="city" id="city" readonly /></label>
+        <label>State/Region <input type="text" name="state" id="state" readonly /></label>
+        <small>This helps us find local grocery stores, seasonal ingredients, and delivery options — Later ON</small>
+      </section>
+
+      <section>
+        <h2>Demographics</h2>
+        <label>Age Group
+          <select name="ageGroup">
+            <option>Under 18</option>
+            <option>18–25</option>
+            <option>26–35</option>
+            <option>36–45</option>
+            <option>46–60</option>
+            <option>Over 60</option>
+          </select>
+        </label>
+
+        <label>Gender Identity
+          <select name="gender" id="gender">
+            <option>Male</option>
+            <option>Female</option>
+            <option>Non-binary</option>
+            <option>Prefer not to say</option>
+            <option>Other</option>
+          </select>
+        </label>
+        <label id="gender-other-label" style="display:none;">Please specify: <input type="text" name="genderOther" /></label>
+
+        <label>Ethnicity (Optional)
+          <select name="ethnicity">
+            <option value="">-- Select --</option>
+            <option>South Asian</option>
+            <option>East Asian</option>
+            <option>Black</option>
+            <option>White</option>
+            <option>Latino</option>
+            <option>Middle Eastern</option>
+            <option>Indigenous</option>
+            <option>Other</option>
+          </select>
+        </label>
+      </section>
+
+      <section>
+        <h2>Preferences</h2>
+        <fieldset>
+          <legend>Preferred Shops</legend>
+          <label><input type="checkbox" name="shops" value="Walmart" /> Walmart</label>
+          <label><input type="checkbox" name="shops" value="Costco" /> Costco</label>
+          <label><input type="checkbox" name="shops" value="Farmboy" /> Farmboy</label>
+          <label><input type="checkbox" name="shops" value="Metro" /> Metro</label>
+          <label><input type="checkbox" name="shops" value="Sobeys" /> Sobeys</label>
+        </fieldset>
+
+        <fieldset>
+          <legend>Delivery Apps</legend>
+          <label><input type="checkbox" name="delivery" value="Uber" /> Uber</label>
+          <label><input type="checkbox" name="delivery" value="Instacart" /> Instacart</label>
+        </fieldset>
+      </section>
+
+      <div class="actions">
+        <button type="submit">Save Preferences</button>
+        <button type="button" class="secondary">Skip for Now</button>
+      </div>
+    </form>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
